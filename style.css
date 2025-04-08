@@ -52,7 +52,7 @@ body {
 /* Header */
 /* Sticky Header */
 .sticky-header {
-  position: sticky;
+  position: scrola;
   top: 0;
   z-index: 1000;
   background-color: var(--bgDark);
