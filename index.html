@@ -17,40 +17,398 @@
   <link rel="icon" href="kym.png" type="image/x-icon">
   <title>Kimani_Anthony</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Poppins', 'Lato', sans-serif;
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      color: #1e293b;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    .sticky-header {
+      background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
+      box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
+      padding-bottom: 2rem;
+      color: #fff;
+    }
+
+    .nav-links a {
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+      padding-left: 1.5em;
+    }
+
+    .nav-links a:hover {
+      color: #fbbf24;
+    }
+
+    .hero {
+      background: linear-gradient(90deg, #6366f1 0%, #1e293b 100%);
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08);
+      margin-top: 2rem;
+      padding: 2rem;
+      align-items: center;
+      gap: 2rem;
+      color: #fff;
+    }
+
+    .hero img {
+      border-radius: 50%;
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.15);
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border: 6px solid #fff;
+    }
+
+    .hero h6 {
+      font-size: 1.2rem;
+      color: #fbbf24;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 span {
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 400;
+      line-height: 1.6;
+      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+      transform: translateY(-2px) scale(1.05);
+      color: #1e293b;
+    }
+
+    section {
+      margin: 3rem 0;
+      padding: 2rem 0;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.05);
+      background: #fff;
+      color: #1e293b;
+    }
+
+    .about h1,
+    .about h3 {
+      color: #1e293b;
+    }
+
+    .about h1::before {
+      color: #fbbf24;
+    }
+
+    .about span {
+      color: #6366f1;
+    }
+
+    .services {
+      background: linear-gradient(90deg, #f3f4f6 0%, #6366f1 100%);
+      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.07);
+      color: #1e293b;
+    }
+
+    .services-head {
+      color: #1e293b;
+    }
+
+    .services p {
+      color: #e0e7ff;
+    }
+
+    .services-desc {
+      color: #fbbf24;
+      font-weight: 600;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-evenly;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
+      padding: 2rem 1.5rem;
+      width: 300px;
+      min-height: 340px;
+      flex: 0 0 300px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 1rem;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h2 {
+      color: #6366f1;
+    }
+
+    .projects {
+      background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.09);
+    }
+
+    .projects p {
+      color: #e0e7ff;
+    }
+
+    .projects-head {
+      color: #fff;
+    }
+
+    .project-card {
+      background: #fff;
+      color: #1e293b;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
+      padding: 1.5rem;
+      width: 360px;
+      min-height: 420px;
+      flex: 0 0 360px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      color: #6366f1;
+    }
+
+    .project-card a {
+      background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 0.5rem 1.2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .project-card a:hover {
+      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+      color: #1e293b;
+      transform: scale(1.05);
+    }
+
+    #contact {
+      background: linear-gradient(90deg, #f3f4f6 0%, #6366f1 100%);
+      color: #1e293b;
+      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.07);
+      border-radius: 1rem;
+      padding: 2rem 0;
+    }
+
+    #contact h2 {
+      color: #6366f1;
+    }
+
+    #contact input,
+    #contact textarea {
+      color: #1e293b;
+      background: #fff;
+      border-radius: 1rem;
+      border: 1px solid #6366f1;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.05);
+      transition: border 0.2s;
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+      border: 2px solid #fbbf24;
+      outline: none;
+      color: #1e293b;
+    }
+
+    #contact button {
+      background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    #contact button:hover {
+      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+      color: #1e293b;
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    .footer {
+      background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
+      color: #fff;
+      padding: 2rem 0;
+      border-radius: 1rem 1rem 0 0;
+      margin-top: 3rem;
+      box-shadow: 0 -2px 12px rgba(30, 41, 59, 0.09);
+    }
+
+    .footer-col h4 {
+      color: #fbbf24;
+    }
+
+    .footer-col ul li a {
+      color: #fff;
+    }
+
+    .footer-col ul li a:hover {
+      color: #fbbf24;
+    }
+
+    .icons a {
+      color: #fff;
+    }
+
+    .icons a:hover {
+      color: #fbbf24;
+    }
+
+    .footer-copyright {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .card-grid,
+      .project-grid,
+      .footer-row {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .hero img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      section {
+        padding: 1rem 0;
+      }
+
+      .hero {
+        padding: 1rem;
+      }
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-evenly;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: #fff;
+      color: #1e293b;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
+      padding: 1.5rem;
+      width: 360px;
+      min-height: 420px;
+      flex: 0 0 360px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 1000px) {
+      .project-grid {
+        justify-content: center;
+      }
+
+      .project-card {
+        width: 95vw;
+        min-height: unset;
+        flex: 1 1 95vw;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<!-- Header Section -->
-<header class="sticky-header">
-  <div class="container">
-    <nav class="flex items-center justify-between">
-      <div class="left flex items-center gap-4">
-        <div class="logo">
-          <!-- Add Logo if needed -->
+  <!-- Header Section -->
+  <header class="sticky-header">
+    <div class="container">
+      <nav class="flex items-center justify-between">
+        <div class="left flex items-center gap-4">
+          <div class="logo">
+            <!-- Add Logo if needed -->
+          </div>
+          <div class="nav-links flex gap-6">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact Us</a>
+          </div>
         </div>
-        <div class="nav-links flex gap-6">
-          <a href="#">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact Us</a>
-        </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
 
-  <div id="hero" class="hero flex items-center justify-between">
-    <div class="left flex-1 justify-center">
-      <img src="kym.jpg" alt="My brand">
+    <div id="hero" class="hero flex items-center justify-between">
+      <div class="left flex-1 justify-center">
+        <img src="kym.jpg" alt="My brand">
+      </div>
+      <div class="right flex-1">
+        <h6>Kimani Anthony</h6>
+        <h1>
+          <span>I am a multidisciplinary creative and innovator — a Designer, Photographer, Mentor, Content Creator, Developer, and Founder — passionate about blending creativity and technology to inspire, build, and make an impact.</span>
+        </h1>
+        <a href="Kimani Anthony CV.pdf" download="Kimani_Anthony_CV.pdf" class="btn btn-secondary">DOWNLOAD CV</a>
+      </div>
     </div>
-    <div class="right flex-1">
-      <h6>Kimani Anthony</h6>
-      <h1>
-        <span>I am a Designer, Photographer, Mentor, Content Creator, Developer & Founder</span>
-      </h1>
-      <a href="Kimani Anthony CV.pdf" download="Kimani_Anthony_CV.pdf" class="btn btn-secondary">DOWNLOAD CV</a>
-    </div>
-  </div>
-</header>
+  </header>
 
   <section id="about" class="about">
     <div class="container flex flex-wrap md:flex-nowrap items-center">
@@ -61,164 +419,156 @@
         <h1>About <span>Me</span></h1>
         <h3>Hello! I'm Kimani Anthony.</h3>
         <p>
-I’m a versatile creative and tech enthusiast driven by curiosity, a passion for learning, and a heart for community impact.  
+          I’m a versatile creative and tech enthusiast driven by curiosity, a passion for learning, and a heart for community impact.
 
-As a photographer, I love capturing real, powerful moments, whether it's the joy in a candid smile, the emotion in a silent stare, or the energy of everyday life. My lens tells stories that connect people, inspire reflection, and preserve memories that matter.
+          As a photographer, I love capturing real, powerful moments, whether it's the joy in a candid smile, the emotion in a silent stare, or the energy of everyday life. My lens tells stories that connect people, inspire reflection, and preserve memories that matter.
 
-In the world of tech, I build intuitive and user-centered solutions using JavaScript, Node.js, Django, Flutter, and Dart. I’m passionate about problem-solving and thrive in spaces where creativity meets code. Whether it's developing mobile apps or building dynamic web platforms, I aim to create tools that are not only functional but meaningful.
+          In the world of tech, I build intuitive and user-centered solutions using JavaScript, Node.js, Django, Flutter, and Dart. I’m passionate about problem-solving and thrive in spaces where creativity meets code. Whether it's developing mobile apps or building dynamic web platforms, I aim to create tools that are not only functional but meaningful.
 
-Beyond tech and photography, I’m a certified first aider, always ready to support in emergencies. 
+          Beyond tech and photography, I’m a certified first aider, always ready to support in emergencies.
 
-As a mentor, I work closely with adolescents and peers, sharing my experiences to guide, encourage, and empower them in their personal and professional growth.
+          As a mentor, I work closely with adolescents and peers, sharing my experiences to guide, encourage, and empower them in their personal and professional growth.
 
-My graphic design work complements my visual storytelling, allowing me to blend imagery with impactful messages that engage and resonate.
+          My graphic design work complements my visual storytelling, allowing me to blend imagery with impactful messages that engage and resonate.
 
-At the heart of it all, I’m a storyteller and a builder committed to using my skills to inform, inspire, and make a difference.
+          At the heart of it all, I’m a storyteller and a builder committed to using my skills to inform, inspire, and make a difference.
         </p>
       </div>
     </div>
   </section>
 
-  <!--Services Section--> 
+  <!--Services Section-->
 
-    <section id="services" class="services">
-      <div class="container">
-        <h1 class="services-head">Services</h1>
-        <p>All your digital needs... covered.</p>
-        <div class="card-grid">
-          <div class="col-md-4 row"></div>
-          <div class="card">
-            <h2>Graphic Desgin</h2>
-            <p>
-              <ul>
-                <li>Professional logos and brand identity development. </li>
-                <li>Eye-catching marketing materials: flyers, posters, social media graphics.</li>
-                <li>Creative designs that communicate your story effectively.</li>
-                <li>Expertise in Adobe Photoshop, Illustrator, and other design tools.
-                </li>
-              </ul>
-            </p>
-          </div>
-          
-          <div class="col-md-4"></div>
-          <div class="card">
-            <h2>Web Development</h2>
-            <p>
-            <ul>
-              <li>Custom-built websites tailored to your brand. </li>
-              <li> Responsive design for seamless experience across devices.</li>
-              <li>User-friendly interfaces optimized for performance.</li>
-              <li> Technologies: HTML, CSS, JavaScript, Django, Dart, Node.js, and more.</li>
-              <li>Integration of third-party APIs to enhance website functionality and user experience.</li>
-           </ul>
-            </p>
-          </div>
-          
-          <div class="col-md-4"></div>
-          <div class="card">
-            <h2>Content Writing</h2>
-            <p>
-              <ul>
-                <li> SEO-optimized website content and blogs. </li>
-                <li> Engaging brand storytelling that connects with your audience. </li>
-                <li> Proofreading and editing services for polished, professional writing. </li>
-                <li> Tailored content strategies to boost your brand’s online presence and engagement.</li>
-                <li> Expertise in writing, editing, and proofreading for both written and spoken content. </li>
+  <section id="services" class="services">
+    <div class="container">
+      <h1 class="services-head">Services</h1>
+      <p class="services-desc">All your digital needs... covered.</p>
+      <div class="card-grid">
+        <div class="col-md-4 row"></div>
+        <div class="card">
+          <h2>Graphic Design</h2>
+          <ul>
+            <li>Professional logos and brand identity development.</li>
+            <li>Eye-catching marketing materials: flyers, posters, social media graphics.</li>
+            <li>Creative designs that communicate your story effectively.</li>
+            <li>Expertise in Adobe Photoshop, Illustrator, and other design tools.</li>
+          </ul>
+        </div>
 
-              </ul>
-            </p>
-          </div>
-          
-          <div class="col-md-4"></div>
-          <div class="card">
-            <h2>Why Choose Me</h2>
-            <p>
-              <ul>
-                <li> On-time delivery with uncompromised quality. </li>
-                <li> Creative vision combined with technical precision. </li>
-                <li> Open communication and a client-centered approach. </li>
-                <li> Versatile skill set for all-in-one digital solutions. </li>
-                <li> Passionate about your work and your clients' success. </li>
-                <li> Expertise in digital marketing and social media strategies. </li>
+        <div class="col-md-4"></div>
+        <div class="card">
+          <h2>Web Development</h2>
+          <ul>
+            <li>Custom-built websites tailored to your brand.</li>
+            <li>Responsive design for seamless experience across devices.</li>
+            <li>User-friendly interfaces optimized for performance.</li>
+            <li>Technologies: HTML, CSS, JavaScript, Django, Dart, Node.js, and more.</li>
+            <li>Integration of third-party APIs to enhance website functionality and user experience.</li>
+          </ul>
+        </div>
 
-              </ul>
-            </p>
-      </div>
-    </section>
+        <div class="col-md-4"></div>
+        <div class="card">
+          <h2>Content Writing</h2>
+          <ul>
+            <li>SEO-optimized website content and blogs.</li>
+            <li>Engaging brand storytelling that connects with your audience.</li>
+            <li>Proofreading and editing services for polished, professional writing.</li>
+            <li>Tailored content strategies to boost your brand’s online presence and engagement.</li>
+            <li>Expertise in writing, editing, and proofreading for both written and spoken content.</li>
+          </ul>
+        </div>
 
-    <!--Projects Section-->
-
-    <section id="projects" class="projects">
-      <div class="container">
-        <h1 class="projects-head">My Projects</h1>
-        <p>Here are some of the projects I have worked on, showcasing my skills in web development, graphic design, and photography</p>
-        <div class="project-grid">
-          <!-- Project 1  Photography -->
-          <div class="project-card">
-            <img src="photos/IMG_0409.jpg" alt="Project 1" />
-            <h3>photography</h3>
-            <p>"Through the Lens" is a photography project that explores the beauty of everyday life through the eyes of the observer.</p>
-            <a href="photography.html">View Project</a>
-          </div>
-    
-          <!-- Project 2   Graphic Design -->
-          <div class="project-card">
-            <img src="c.png" alt="Project 2" />
-            <h3>Graphic Design</h3>
-            <p>The focus was on developing professional logos, marketing materials, and social media graphics that aligned with the client's vision and audience preferences.</p>
-            <a href="design.html">View Project</a>
-          </div>
-    
-          <!-- Project 3  Web Development -->
-          <div class="project-card">
-            <img src="photos/saso_logo-removebg-preview.png" alt="Project 3" />
-            <h3>Web Development</h3>
-            <p>A crafted web page for my community based organization showing our activities and our objectives to our community.</p>
-            <a href="https://spreadasmileorganization.vercel.app/">View Project</a>
-          </div>
-          
-          <!-- Add more projects as needed -->
+        <div class="col-md-4"></div>
+        <div class="card">
+          <h2>Why Choose Me</h2>
+          <ul>
+            <li>On-time delivery with uncompromised quality.</li>
+            <li>Creative vision combined with technical precision.</li>
+            <li>Open communication and a client-centered approach.</li>
+            <li>Versatile skill set for all-in-one digital solutions.</li>
+            <li>Passionate about your work and your clients' success.</li>
+            <li>Expertise in digital marketing and social media strategies.</li>
+          </ul>
         </div>
       </div>
-    </section>
-    
-    <!--Conatct US Section-->
+    </div>
+  </section>
 
-    <section id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>If you'd like to get in touch with me, feel free to reach out!</p>
-        <form action="https://formspree.io/f/xdkeledv" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-      </form>
-      
+  <!--Projects Section-->
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <h1 class="projects-head">My Projects</h1>
+      <p>Here are some of the projects I have worked on, showcasing my skills in web development, graphic design, and photography
+      </p>
+      <div class="project-grid">
+        <!-- Project 1  Photography -->
+        <div class="project-card">
+          <img src="photos/IMG_0409.jpg" alt="Project 1" />
+          <h3>photography</h3>
+          <p>"Through the Lens" is a photography project that explores the beauty of everyday life through the eyes of the observer.
+          </p>
+          <a href="photography.html">View Project</a>
+        </div>
+
+        <!-- Project 2   Graphic Design -->
+        <div class="project-card">
+          <img src="c.png" alt="Project 2" />
+          <h3>Graphic Design</h3>
+          <p>The focus was on developing professional logos, marketing materials, and social media graphics that aligned with the client's vision and audience preferences.
+          </p>
+          <a href="design.html">View Project</a>
+        </div>
+
+        <!-- Project 3  Web Development -->
+        <div class="project-card">
+          <img src="photos/saso_logo-removebg-preview.png" alt="Project 3" />
+          <h3>Web Development</h3>
+          <p>A crafted web page for my community based organization showing our activities and our objectives to our community.
+          </p>
+          <a href="https://spreadasmileorganization.vercel.app/">View Project</a>
+        </div>
+
+        <!-- Add more projects as needed -->
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!--Footer Section-->
-  
+  <!--Contact US Section-->
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>If you'd like to get in touch with me, feel free to reach out!</p>
+      <form action="https://formspree.io/f/xdkeledv" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!--Footer Section-->
+
   <section class="footer">
     <div class="footer-row">
       <div class="footer-col">
         <h4>Info</h4>
         <ul class="links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
-          
-        </form>
         <div class="icons">
           <a href="https://www.facebook.com/anthony.kimani.7967" title="Facebook">
             <i class="fa-brands fa-facebook"></i>
           </a>
-          <a href="https://x.com/KymCreates7?t=gGvzTYTYYN9sU9dm1CLMaA&s=09"title="Twitter">
+          <a href="https://x.com/KymCreates7?t=gGvzTYTYYN9sU9dm1CLMaA&s=09" title="Twitter">
             <i class="fa-brands fa-twitter"></i>
           </a>
           <a href="https://www.linkedin.com/in/anthony-kimani-7983a1286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn">
@@ -228,14 +578,25 @@ At the heart of it all, I’m a storyteller and a builder committed to using my 
             <i class="fa-brands fa-github"></i>
           </a>
         </div>
-      <div class="footer-copyright">
-          <p>&copy;  KimaniAnthony.</p>
+        <div class="footer-copyright">
+          <p>&copy; KimaniAnthony.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!--Javascript-->
+  <!--Javascript for smooth scroll-->
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 
