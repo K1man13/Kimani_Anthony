@@ -4,195 +4,394 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graphic Design Projects</title>
-  <link rel="stylesheet" href="design.css">
+  <title>Kimani Anthony - Graphic Design Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link rel="icon" href="kym.png" type="image/x-icon">
+  <link rel="icon" href="c.png" type="image/x-icon">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', 'Lato', sans-serif;
       background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
       color: #1e293b;
-      margin: 0;
       scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
-    .header {
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* ===== HEADER & NAVIGATION ===== */
+    header {
       background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
-      box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
-      padding: 1rem 0;
-      color: #fff;
+      box-shadow: 0 4px 16px rgba(30, 41, 59, 0.12);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .nav-links {
+    nav {
       display: flex;
       gap: 2rem;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      justify-content: flex-start;
+      align-items: center;
     }
 
-    .nav-links a {
+    nav a {
       color: #fff;
       font-weight: 600;
       text-decoration: none;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-      transition: color 0.2s;
+      font-size: 1rem;
+      transition: all 0.3s ease;
       position: relative;
-      padding-left: 1.5em;
     }
 
-    .nav-links a:hover {
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fbbf24;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
       color: #fbbf24;
     }
 
+    /* ===== HERO SECTION ===== */
     .hero {
-      background: linear-gradient(90deg, #6366f1 0%, #1e293b 100%);
+      background: linear-gradient(135deg, #6366f1 0%, #1e293b 100%);
       border-radius: 1.5rem;
-      box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08);
+      box-shadow: 0 8px 32px rgba(30, 41, 59, 0.12);
       margin: 2rem auto;
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      text-align: center;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
       color: #fff;
+      max-width: 97%;
+    }
+
+    .hero .left {
+      flex: 0 0 auto;
+    }
+
+    .hero img {
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border: 6px solid #fff;
+      transition: transform 0.3s ease;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    .hero .right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero h6 {
+      font-size: 1.1rem;
+      color: #fbbf24;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      font-size: 2.2rem;
+      margin: 1rem 0 1.5rem 0;
+      font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+      line-height: 1.3;
+      background: linear-gradient(90deg, #fbbf24 0%, #e0e7ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #e0e7ff;
-      margin-bottom: 0;
+      margin-bottom: 1.5rem;
     }
 
-    .portfolio {
-      background: #fff;
-      border-radius: 1rem;
-      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.05);
-      margin: 2rem auto;
-      padding: 2rem 1rem;
-      max-width: 1600px;
+    .btn {
+      background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
       color: #1e293b;
     }
 
-    .portfolio h2 {
-      font-size: 2rem;
+    /* ===== SECTIONS ===== */
+    section {
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 20px rgba(30, 41, 59, 0.08);
+      background: #fff;
+      color: #1e293b;
+      max-width: 97%;
+    }
+
+    h2 {
       color: #6366f1;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
       text-align: center;
       letter-spacing: 1px;
     }
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: space-evenly;
+    /* ===== PORTFOLIO SECTION ===== */
+    .portfolio-intro {
+      text-align: center;
+      margin-bottom: 3rem;
     }
 
-    .card {
+    .portfolio-intro p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-card {
       background: #fff;
       border-radius: 1.2rem;
-      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
       padding: 1.5rem;
-      width: 420px;
-      min-height: 420px;
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      margin-bottom: 1rem;
-      color: #1e293b;
       justify-content: space-between;
+      min-height: 420px;
     }
 
-    .card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.18);
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
     }
 
-    .card img {
+    .portfolio-card img {
       border-radius: 1rem;
       width: 100%;
       height: 240px;
       object-fit: contain;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
-      background: #fff;
-      border: 2px solid #e5e7eb;
+      margin-bottom: 1.5rem;
+      background: #f3f4f6;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.3s ease;
     }
 
-    .card h3 {
+    .portfolio-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-card h3 {
       color: #6366f1;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-align: center;
     }
 
-    .card p {
-      color: #222;
+    .portfolio-card p {
+      color: #555;
       font-size: 1rem;
-      text-align: center;
-      margin-bottom: 0;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex-grow: 1;
     }
 
-    #contact {
-      background: linear-gradient(90deg, #f3f4f6 0%, #6366f1 100%);
+    .portfolio-card .btn-small {
+      background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      align-self: center;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-card .btn-small:hover {
+      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
       color: #1e293b;
-      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.07);
+      transform: scale(1.08);
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7ff 100%);
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-evenly;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
+      padding: 2rem;
+      width: 300px;
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.18);
+    }
+
+    .service-card h3 {
+      color: #6366f1;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .about-content img {
       border-radius: 1rem;
-      padding: 1.2rem 0;
-      margin: 2rem auto;
-      max-width: 900px;
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .about-content .text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-content h3 {
+      color: #6366f1;
+      font-size: 1.3rem;
+      margin: 1.5rem 0 1rem 0;
+      font-weight: 700;
+    }
+
+    .about-content p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    #contact {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7ff 100%);
+      max-width: 95%;
     }
 
     #contact h2 {
-      font-size: 2rem;
       color: #6366f1;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-align: center;
     }
 
-    #contact p {
-      color: #1e293b;
+    #contact > .container > p {
       text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
     #contact input,
     #contact textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border-radius: 1rem;
-      border: 1px solid #6366f1;
-      font-size: 1rem;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.05);
-      transition: border 0.2s;
       color: #1e293b;
+      background: #fff;
+      border-radius: 1rem;
+      border: 2px solid #e5e7eb;
+      padding: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
     }
 
     #contact input:focus,
     #contact textarea:focus {
-      border: 2px solid #fbbf24;
+      border: 2px solid #6366f1;
       outline: none;
-      color: #1e293b;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+    }
+
+    #contact textarea {
+      min-height: 150px;
+      resize: vertical;
     }
 
     #contact button {
@@ -200,227 +399,362 @@
       color: #fff;
       border: none;
       border-radius: 2rem;
-      padding: 0.75rem 2rem;
+      padding: 1rem 2rem;
       font-size: 1rem;
       font-weight: 600;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      margin: 0 auto;
-      display: block;
+      transition: all 0.3s ease;
     }
 
     #contact button:hover {
       background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
-      transform: translateY(-2px) scale(1.05);
       color: #1e293b;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
     }
 
+    /* ===== FOOTER ===== */
     .footer {
       background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
       color: #fff;
-      padding: 2rem 0;
-      border-radius: 1rem 1rem 0 0;
-      margin-top: 3rem;
-      box-shadow: 0 -2px 12px rgba(30, 41, 59, 0.09);
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+      box-shadow: 0 -4px 20px rgba(30, 41, 59, 0.12);
     }
 
     .footer-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
+      gap: 3rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .footer-col h4 {
       color: #fbbf24;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-weight: 700;
     }
 
     .footer-col ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
     }
 
     .footer-col ul li {
-      margin-bottom: 0.5em;
+      margin-bottom: 0.8rem;
     }
 
     .footer-col ul li a {
-      color: #fff;
+      color: #e0e7ff;
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
     }
 
     .footer-col ul li a:hover {
       color: #fbbf24;
     }
 
+    .icons {
+      display: flex;
+      gap: 1.5rem;
+    }
+
     .icons a {
       color: #fff;
-      margin-right: 1rem;
       font-size: 1.5rem;
-      transition: color 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(251, 191, 36, 0.1);
+      transition: all 0.3s ease;
     }
 
     .icons a:hover {
       color: #fbbf24;
+      background: rgba(251, 191, 36, 0.2);
       transform: scale(1.1);
     }
 
     .footer-copyright {
-      margin-top: 1.5rem;
-      color: #fff;
-      font-size: 1rem;
+      margin-top: 2rem;
+      color: #e0e7ff;
       text-align: center;
       width: 100%;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    @media (max-width: 1100px) {
-      .grid {
-        gap: 1rem;
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero {
+        padding: 2rem;
+        gap: 2rem;
       }
 
-      .card {
-        width: 90vw;
-        min-height: unset;
+      section {
+        padding: 2rem 1.5rem;
       }
     }
 
-    @media (max-width: 700px) {
-      .portfolio,
+    @media (max-width: 900px) {
       .hero,
-      #contact {
-        padding: 1rem 0.5rem;
-        max-width: 100vw;
-      }
-
-      .grid {
+      .about-content,
+      .services-grid,
+      .footer-row {
         flex-direction: column;
-        align-items: center;
+        gap: 2rem;
       }
 
-      .card {
-        width: 95vw;
+      .hero img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 1rem 0;
+      }
+
+      nav {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding: 1.5rem;
+        margin: 1rem auto;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+        margin: 2rem auto;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="header">
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="photography.html">Photography</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- HEADER SECTION -->
+  <header>
+    <div class="container">
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="hero">
+    <div class="left">
+      <img src="kym.png" alt="Kimani Anthony - Graphic Designer">
+    </div>
+    <div class="right">
+      <h6>Graphic Design Specialist</h6>
+      <h1>Kimani Anthony</h1>
+      <p>Creative visual solutions that tell your brand's story. Specializing in logo design, brand identity, event promotions, and impactful visual communication for community impact.</p>
+      <a href="#contact" class="btn">Start a Project</a>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio">
     <div class="container">
-      <h1>Graphic Design</h1>
-      <p>Take a look at some of my favorite projects below. Each design represents my commitment to creativity, innovation, and precision.</p>
+      <h2>Design Portfolio</h2>
+      <div class="portfolio-intro">
+        <p>A curated collection of my graphic design work showcasing creativity, brand strategy, and visual storytelling across diverse projects.</p>
+      </div>
+      <div class="portfolio-grid">
+        <!-- Portfolio Item 1 -->
+        <div class="portfolio-card">
+          <img src="kym.png" alt="Modern Logo Design">
+          <h3>Brand Logo</h3>
+          <p>A modern and versatile logo design perfect for tech startups and creative agencies. Clean lines and contemporary aesthetics create a memorable brand presence.</p>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="portfolio-card">
+          <img src="photos/IMG-20241106-WA0017.jpg" alt="Event Flyer Design">
+          <h3>Event Flyer</h3>
+          <p>Eye-catching flyer for a teenage conference. This design collaboration showcases vibrant colors and clear hierarchy to drive engagement and attendance.</p>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="portfolio-card">
+          <img src="photos/Untitled design_20240624_195809_0000.png" alt="Brand Identity">
+          <h3>Community Brand</h3>
+          <p>A reflector of an annual early Christmas celebration event for kids in Kibera. The design captures joy, community spirit, and positive impact.</p>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="portfolio-card">
+          <img src="photos/IMG-20240717-WA0070.jpg" alt="Event Poster Design">
+          <h3>Event Marketing Poster</h3>
+          <p>Professional event poster created for an initiative in Kibera informal settlements. The design effectively communicates the event message to the target audience.</p>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="portfolio-card">
+          <img src="photos/IMG-20241117-WA0006.jpg" alt="T-Shirt Design">
+          <h3>Custom T-Shirt Design</h3>
+          <p>Bold and engaging design for a teenage mentorship event t-shirt. Features carefully selected elements that inspire and empower a youthful audience with professional appeal.</p>
+        </div>
+
+        <!-- Portfolio Item 6 -->
+        <div class="portfolio-card">
+          <img src="photos/IMG-20240425-WA0033.jpg" alt="Bracelet Design">
+          <h3>Custom Bracelet Design</h3>
+          <p>Handcrafted customized bracelet design with bold, eye-catching patterns. Perfect for personal use, gifts, or promotional items with unique artistic flair.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="portfolio" class="portfolio">
-    <h2>Design Portfolio</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="kym.png" alt="Design 1">
-        <h3>Modern Logo</h3>
-        <p>A sleek and modern logo for a tech startup.</p>
-      </div>
-      <div class="card">
-        <img src="photos/IMG-20241106-WA0017.jpg" alt="Design 2">
-        <h3>Event Flyer</h3>
-        <p>Teenage conference event this was a great design which was a collaboration with a childhood friend of mine.</p>
-      </div>
-      <div class="card">
-        <img src="photos/Untitled design_20240624_195809_0000.png" alt="Design 3">
-        <h3>Brand Identity</h3>
-        <p>A reflector of an event that takes part annually to have an early Christmas celebration with kids in Kibera.</p>
-      </div>
-      <div class="card">
-        <img src="photos/IMG-20240717-WA0070.jpg" alt="Design 4">
-        <h3>Social Media Graphics</h3>
-        <p>This is an event poster that I had the privilege to create for marketing an event that took place in Kibra informal settlements in Nairobi.</p>
-      </div>
-      <div class="card">
-        <img src="photos/IMG-20241117-WA0006.jpg" alt="Design 5">
-        <h3>Tshirt Mockup</h3>
-        <p>This is a custom event T-shirt for a teenage mentorship event held in Nairobi. The design reflects the event’s mission to inspire and empower young minds. With a bold and engaging aesthetic, the T-shirt features carefully selected features for youthful audience while maintaining a professional and uplifting feel.</p>
-      </div>
-      <div class="card">
-        <img src="photos/IMG-20240425-WA0033.jpg" alt="Design 5">
-        <h3>Customized Bracelet</h3>
-        <p>Make a statement with our handcrafted customized bracelets. Designed for durability and comfort, these bracelets feature bold, eye-catching designs that can be personalized to match your style or brand. Whether for personal use, gifts, or promotions, each piece is crafted with care to ensure a unique and meaningful accessory.</p>
+  <!-- SERVICES SECTION -->
+  <section id="services">
+    <div class="container">
+      <h2>Design Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Logo & Branding</h3>
+          <p>Professional logo design and complete brand identity systems that establish your unique market presence and communicate your values effectively.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Event Design</h3>
+          <p>Eye-catching promotional materials, posters, flyers, and event branding that drive engagement and create memorable experiences.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Social Media Graphics</h3>
+          <p>Compelling social media assets, posts, stories, and graphics designed to maximize engagement and strengthen your online presence.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Product Design</h3>
+          <p>Custom merchandise design including t-shirts, bracelets, and branded merchandise that reflects your vision and resonates with your audience.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2>About My Design Work</h2>
+      <div class="about-content">
+        <img src="kym.png" alt="Kimani Anthony">
+        <div class="text">
+          <h3>Creative Visual Storyteller</h3>
+          <p>I believe great design is more than aesthetics—it's about communication, strategy, and impact. My work focuses on creating visual solutions that resonate with audiences and serve a greater purpose.</p>
+
+          <h3>Design Specializations</h3>
+          <p>From logo design and brand identity to event promotions and product design, I bring a versatile skill set combining creativity with strategic thinking. Adobe Creative Suite proficiency ensures professional-quality deliverables.</p>
+
+          <h3>Community-Focused Approach</h3>
+          <p>I'm passionate about using design for social good. Many of my projects support community initiatives and events that inspire change and empower young people.</p>
+
+          <h3>My Design Process</h3>
+          <p>I work collaboratively with clients to understand their vision, conducting thorough research and concept development before creating designs that exceed expectations. Revisions and feedback are welcome throughout the process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
   <section id="contact">
     <div class="container">
-      <h2>Contact</h2>
-      <p>If you'd like to get in touch with me, feel free to reach out!</p>
+      <h2>Let's Create Together</h2>
+      <p>Ready to bring your design vision to life? Get in touch to discuss your project and explore creative possibilities.</p>
       <form action="https://formspree.io/f/xdkeledv" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
+        <input type="text" name="subject" placeholder="Design Service Interest" required>
+        <textarea name="message" placeholder="Tell me about your design needs..." required></textarea>
+        <button type="submit">Send Inquiry</button>
       </form>
     </div>
   </section>
 
-  <section class="footer">
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
     <div class="footer-row">
       <div class="footer-col">
-        <h4>Info</h4>
-        <ul class="links">
+        <h4>Navigation</h4>
+        <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="photography.html">Photography</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
+        <h4>Connect</h4>
         <div class="icons">
-          <a href="https://web.facebook.com/anthonio.xitony" target="_blank" rel="noopener" title="Facebook">
-            <i class="fa-brands fa-facebook"></i>
+          <a href="https://web.facebook.com/anthonio.xitony" target="_blank" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://x.com/KymCreates7?t=gGvzTYTYYN9sU9dm1CLMaA&s=09" target="_blank" rel="noopener" title="Twitter">
-            <i class="fa-brands fa-twitter"></i>
+          <a href="https://x.com/KymCreates7" target="_blank" title="Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
           </a>
-          <a href="https://www.linkedin.com/in/anthony-kimani-7983a1286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" title="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/anthony-kimani-7983a1286" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com/K1man13" target="_blank" rel="noopener" title="GitHub">
+          <a href="https://github.com/K1man13" target="_blank" title="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
         </div>
         <div class="footer-copyright">
-          <p>&copy; KimaniAnthony.</p>
+          <p>&copy; 2026 Kimani Anthony. Graphic Design. All Rights Reserved.</p>
         </div>
       </div>
     </div>
-  </section>
-</body>
+  </footer>
 
-</html>
-        </div>
-        <div class="footer-copyright">
-          <p>&copy; KimaniAnthony.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 
 </html>

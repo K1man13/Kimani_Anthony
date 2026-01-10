@@ -1,423 +1,975 @@
 <!DOCTYPE html>
-<html lang="en">
+        <html lang="en">
+          <head>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <link rel="stylesheet" href="style.css" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossorigin
+            />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200;400;600;700&display=swap"
+              rel="stylesheet"
+            />
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            />
+            <link rel="icon" href="c.png" type="image/x-icon" />
+            <title>Kimani Anthony - Professional Photographer</title>
+            <style>
+              * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+              }
 
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <link rel="icon" href="c.png" type="image/x-icon">
-  <title>Photography Projects</title>
-  <link rel="stylesheet" href="photography.css">
-  <style>
-    body {
-      font-family: 'Poppins', 'Lato', sans-serif;
-      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-      color: #1e293b;
-      margin: 0;
-      scroll-behavior: smooth;
-    }
+              body {
+                font-family: "Poppins", "Lato", sans-serif;
+                background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+                color: #1e293b;
+                scroll-behavior: smooth;
+                line-height: 1.6;
+              }
 
-    header {
-      background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
-      box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
-      color: #fff;
-      padding-bottom: 2rem;
-    }
+              .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+              }
 
-    nav {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+              /* ===== HEADER & NAVIGATION ===== */
+              header {
+                background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
+                box-shadow: 0 4px 16px rgba(30, 41, 59, 0.12);
+                padding: 1.5rem 0;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+              }
 
-    nav a {
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-      transition: color 0.2s;
-      padding-left: 1.5em;
-    }
+              nav {
+                display: flex;
+                gap: 2rem;
+                justify-content: flex-start;
+                align-items: center;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+              }
 
-    nav a:hover {
-      color: #fbbf24;
-    }
+              nav a {
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+                font-size: 1rem;
+                letter-spacing: 0.5px;
+                transition: all 0.3s ease;
+                position: relative;
+                padding-bottom: 0.25rem;
+              }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+              nav a::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #fbbf24;
+                transition: width 0.3s ease;
+              }
 
-    #projects {
-      background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
-      color: #fff;
-      border-radius: 1rem;
-      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.09);
-      margin: 2rem auto;
-      padding: 2rem 1rem;
-      max-width: 1400px;
-    }
+              nav a:hover::after {
+                width: 100%;
+              }
 
-    #projects h2 {
-      color: #fff;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-      text-align: center;
-    }
+              nav a:hover {
+                color: #fbbf24;
+              }
 
-    .projects-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: space-evenly;
-      margin-top: 2rem;
-    }
+              /* ===== HERO SECTION ===== */
+              .hero {
+                background: linear-gradient(135deg, #6366f1 0%, #1e293b 100%);
+                border-radius: 1.5rem;
+                box-shadow: 0 8px 32px rgba(30, 41, 59, 0.12);
+                margin: 2rem auto;
+                padding: 3rem 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 3rem;
+                color: #fff;
+                max-width: 97%;
+                height: auto;
+              }
 
-    .project-card {
-      background: #fff;
-      color: #1e293b;
-      border-radius: 1.2rem;
-      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.10);
-      padding: 1.5rem;
-      width: 360px;
-      min-height: 340px;
-      flex: 0 0 360px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      margin-bottom: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-    }
+              .hero .left {
+                flex: 0 0 300px;
+                display: flex;
+                justify-content: center;
+              }
 
-    .project-card img {
-      border-radius: 1rem;
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
-      background: #fff;
-    }
+              .hero img {
+                border-radius: 50%;
+                box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border: 6px solid #fff;
+                transition: transform 0.3s ease;
+              }
 
-    #about,
-    #contact {
-      background: #fff;
-      border-radius: 1rem;
-      box-shadow: 0 2px 12px rgba(30, 41, 59, 0.07);
-      margin: 2rem auto;
-      padding: 2rem 1rem;
-      color: #1e293b;
-      max-width: 900px;
-    }
+              .hero img:hover {
+                transform: scale(1.05);
+              }
 
-    #about h2,
-    #contact h2 {
-      color: #6366f1;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
-      text-align: center;
-    }
+              .hero .right {
+                flex: 1;
+                min-width: 300px;
+              }
 
-    #about p,
-    #contact p {
-      color: #1e293b;
-      text-align: center;
-    }
+              .hero h6 {
+                font-size: 1.1rem;
+                color: #fbbf24;
+                margin-bottom: 0.5rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+              }
 
-    #contact input,
-    #contact textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border-radius: 1rem;
-      border: 1px solid #6366f1;
-      font-size: 1rem;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.05);
-      transition: border 0.2s;
-      color: #1e293b;
-    }
+              .hero h1 {
+                margin: 1rem 0 1.5rem 0;
+                font-size: 2.5rem;
+                font-weight: 700;
+                line-height: 1.3;
+                background: linear-gradient(90deg, #fbbf24 0%, #e0e7ff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              }
 
-    #contact input:focus,
-    #contact textarea:focus {
-      border: 2px solid #fbbf24;
-      outline: none;
-      color: #1e293b;
-    }
+              .hero p {
+                font-size: 1.1rem;
+                color: #e0e7ff;
+                margin-bottom: 1.5rem;
+                line-height: 1.8;
+              }
 
-    #contact button {
-      background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
-      color: #fff;
-      border: none;
-      border-radius: 2rem;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      margin: 0 auto;
-      display: block;
-    }
+              .btn {
+                background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+                color: #fff;
+                border: none;
+                border-radius: 2rem;
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+                font-weight: 600;
+                box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+                letter-spacing: 0.5px;
+              }
 
-    #contact button:hover {
-      background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
-      color: #1e293b;
-      transform: translateY(-2px) scale(1.05);
-    }
+              .btn:hover {
+                background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+                color: #1e293b;
+              }
 
-    .footer {
-      background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
-      color: #fff;
-      padding: 2rem 0;
-      border-radius: 1rem 1rem 0 0;
-      margin-top: 3rem;
-      box-shadow: 0 -2px 12px rgba(30, 41, 59, 0.09);
-    }
+              /* ===== SECTIONS ===== */
+              section {
+                margin: 4rem auto;
+                padding: 3rem 2rem;
+                border-radius: 1.5rem;
+                box-shadow: 0 4px 20px rgba(30, 41, 59, 0.08);
+                background: #fff;
+                color: #1e293b;
+                max-width: 97%;
+              }
 
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+              h2 {
+                color: #6366f1;
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                text-align: center;
+                letter-spacing: 1px;
+              }
 
-    .footer-col h4 {
-      color: #fbbf24;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
+              /* ===== GALLERY SECTION ===== */
+              .gallery-intro {
+                text-align: center;
+                margin-bottom: 3rem;
+              }
 
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+              .gallery-intro p {
+                font-size: 1.1rem;
+                color: #666;
+                margin-bottom: 1rem;
+              }
 
-    .footer-col ul li {
-      margin-bottom: 0.5em;
-    }
+              .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+              }
 
-    .footer-col ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+              .gallery-item {
+                position: relative;
+                border-radius: 1.2rem;
+                overflow: hidden;
+                box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
+                transition: all 0.3s ease;
+                height: 300px;
+              }
 
-    .footer-col ul li a:hover {
-      color: #fbbf24;
-    }
+              .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+              }
 
-    .icons a {
-      color: #fff;
-      margin-right: 1rem;
-      font-size: 1.5rem;
-      transition: color 0.2s, transform 0.2s;
-    }
+              .gallery-item:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+              }
 
-    .icons a:hover {
-      color: #fbbf24;
-      transform: scale(1.1);
-    }
+              .gallery-item:hover img {
+                transform: scale(1.05);
+              }
 
-    .footer-copyright {
-      margin-top: 1.5rem;
-      color: #fff;
-      font-size: 1rem;
-      text-align: center;
-      width: 100%;
-    }
+              .gallery-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(99, 102, 241, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+              }
 
-    @media (max-width: 1100px) {
-      .projects-grid {
-        gap: 1rem;
-      }
+              .gallery-item:hover .gallery-overlay {
+                opacity: 1;
+              }
 
-      .project-card {
-        width: 90vw;
-        min-height: unset;
-      }
-    }
+              .gallery-text {
+                color: #fff;
+                text-align: center;
+                padding: 2rem;
+              }
 
-    @media (max-width: 700px) {
-      #projects,
-      #about,
-      #contact {
-        padding: 1rem 0.5rem;
-        max-width: 100vw;
-      }
+              .gallery-text p {
+                color: #fff;
+                font-size: 0.95rem;
+                line-height: 1.6;
+              }
 
-      .projects-grid {
-        flex-direction: column;
-        align-items: center;
-      }
+              /* ===== SERVICES SECTION ===== */
+              .services {
+                background: linear-gradient(135deg, #f3f4f6 0%, #e5e7ff 100%);
+              }
 
-      .project-card {
-        width: 95vw;
-      }
-    }
+              .services-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: space-evenly;
+                margin-top: 3rem;
+              }
 
-    nav.nav-links {
-      display: flex;
-      gap: 2rem;
-      justify-content: flex-start;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-</head>
+              .service-card {
+                background: #fff;
+                border-radius: 1.2rem;
+                box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
+                padding: 2rem;
+                width: 300px;
+                min-height: 340px;
+                flex: 0 0 300px;
+                transition: all 0.3s ease;
+                color: #1e293b;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border: 1px solid #e5e7eb;
+              }
 
-<body>
-  <header>
-    <div class="container">
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="design.html">Design</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+              .service-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 40px rgba(99, 102, 241, 0.18);
+              }
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2>My Photography Projects</h2>
-      <br>
-      <br>
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <img src="photos/IMG_0409.jpg" alt="Mentoring children at a charity event">
-          <p>Captured at Amazing Wonders Rescue Center during a charity event, this moment showcases mentoring aspiring photographers and tech-enthusiastic children in an inspiring session.</p>
-        </div>
+              .service-card h3 {
+                color: #6366f1;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                font-weight: 700;
+              }
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <img src="photos/IMG_1209.jpg" alt="Graduation celebration at Kiriri Women's University">
-          <p>Captured at Kiriri Women's University during a client's graduation, this inspiring project celebrated young women's academic success and brought immense joy.</p>
-        </div>
+              .service-card p {
+                color: #555;
+                font-size: 1rem;
+                line-height: 1.6;
+              }
 
-        <!-- Project 3 -->
-        <div class="project-card">
-          <img src="photos/IMG_0601.jpg" alt="Charity event partnership with Spread A Smile">
-          <p>At Amazing Wonders Rescue Center, Spread A Smile partnered with the Christified Christian Podcast team for a meaningful charity event, fostering impact and connection.</p>
-        </div>
+              /* ===== ABOUT SECTION ===== */
+              .about-content {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 3rem;
+                margin-top: 2rem;
+              }
 
-        <!-- Project 4 -->
-        <div class="project-card">
-          <img src="photos/IMG_0453.jpg" alt="Vibrant joyful smile captured in a photograph">
-          <p>This vibrant photograph captures a joyful and radiant smile, a moment brimming with happiness and positivity. It reflects the essence of pure joy, showcasing the beauty of unfiltered emotions and the power of a smile to brighten any moment.</p>
-        </div>
+              .about-content img {
+                border-radius: 1rem;
+                box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
+                width: 100%;
+                max-width: 280px;
+                height: auto;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+              }
 
-        <!-- Project 5 -->
-        <div class="project-card">
-          <img src="photos/Photo_1722882871098.jpg" alt="Engaging mentorship session captured in a photograph">
-          <p>In a world where every child deserves a guiding light, mentorship becomes the bridge to a brighter future. This moment captures the beauty of empowerment—where a young girl shares wisdom, encouragement, and hope with eager minds. #MentorshipMatters #InspiringTheFuture #PhotographyForChange</p>
-        </div>
+              .about-content img:hover {
+                transform: translateY(-6px);
+              }
 
-        <!-- Project 6 -->
-        <div class="project-card">
-          <img src="photos/IMG_0656.jpg" alt="Vibrant joyful smile captured in a photograph">
-          <p>This inspiring moment was captured during an engaging mentorship session, where young minds took time for self-reflection—celebrating achievements and learning from challenges. Through mentorship, they found guidance, encouragement, and the strength to keep growing. #MentorshipMatters #ReflectAndGrow #InspiringTheFuture</p>
-        </div>
+              .about-content .text {
+                flex: 1;
+                min-width: 300px;
+              }
 
-        <!-- Project 7 -->
-        <div class="project-card">
-          <img src="photos/IMG-20241003-WA0005.jpg" alt="A creative photograph of a train">
-          <p>This artistic photograph of a train embodies movement, adventure, and the passage of time. With striking details and a play of light and shadows, it tells a story of journeys—both taken and yet to come—inviting the viewer to embrace the spirit of exploration.</p>
-        </div>
+              .about-content h3 {
+                color: #6366f1;
+                font-size: 1.3rem;
+                margin: 1.5rem 0 1rem 0;
+                font-weight: 700;
+              }
 
-        <!-- Project 8 -->
-        <div class="project-card">
-          <img src="photos/IMG_0617.jpg" alt="Vibrant photograph captures the warmth of community and shared moments">
-          <p>This vibrant photo captures the warmth of community and the joy of togetherness in simple acts like peeling potatoes. It reflects the spirit of service and the beauty of finding happiness in everyday tasks, showing how small contributions can make a big impact. #CommunitySpirit #JoyInService #CapturedMoments</p>
-        </div>
-      </div>
-    </div>
-  </section>
+              .about-content p {
+                color: #555;
+                font-size: 1rem;
+                line-height: 1.8;
+                margin-bottom: 1rem;
+              }
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am a versatile professional driven by a passion for continuous learning and creating positive community impact. Motivated by the power of storytelling and innovation, I specialize in capturing compelling moments as a professional photographer and developing user-focused solutions through programming. My expertise spans JavaScript, Django, Node.js, Flutter, and Dart, enabling me to craft creative and impactful digital experiences.</p>
-    </div>
-  </section>
+              /* ===== CONTACT SECTION ===== */
+              #contact {
+                background: linear-gradient(135deg, #f3f4f6 0%, #e5e7ff 100%);
+                max-width: 97%;
+                padding: 3rem 2rem;
+              }
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>If you'd like to get in touch with me, feel free to reach out!</p>
-      <form action="https://formspree.io/f/xdkeledv" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+              #contact h2 {
+                color: #6366f1;
+              }
 
-    </div>
-  </section>
+              #contact > .container > p {
+                text-align: center;
+                color: #666;
+                margin-bottom: 2rem;
+                font-size: 1.05rem;
+              }
 
-  <!-- Footer Section -->
-  <section class="footer">
-    <div class="footer-row">
-      <div class="footer-col">
-        <h4>Info</h4>
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="design.html">Design</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="icons">
-          <a href="https://web.facebook.com/anthonio.xitony" target="" title="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://x.com/KymCreates7?t=gGvzTYTYYN9sU9dm1CLMaA&s=09" target="" title="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/anthony-kimani-7983a1286" target="" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/K1man13" target="" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-        <div class="footer-copyright">
-          <p>&copy; 2025 Kimani Anthony. All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+              #contact form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+              }
 
-</body>
+              #contact input,
+              #contact textarea {
+                color: #1e293b;
+                background: #fff;
+                border-radius: 1rem;
+                border: 2px solid #e5e7eb;
+                font-size: 1rem;
+                padding: 1rem;
+                font-family: inherit;
+                box-shadow: 0 2px 8px rgba(99, 102, 241, 0.05);
+                transition: all 0.3s ease;
+              }
 
-</html>
+              #contact input:focus,
+              #contact textarea:focus {
+                border: 2px solid #6366f1;
+                outline: none;
+                box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+              }
+
+              #contact textarea {
+                min-height: 150px;
+                resize: vertical;
+              }
+
+              #contact button {
+                background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+                color: #fff;
+                border: none;
+                border-radius: 2rem;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                font-weight: 600;
+                box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+                cursor: pointer;
+                transition: all 0.3s ease;
+              }
+
+              #contact button:hover {
+                background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+                color: #1e293b;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+              }
+
+              /* ===== FOOTER ===== */
+              .footer {
+                background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
+                color: #fff;
+                padding: 3rem 2rem;
+                border-radius: 1.5rem 1.5rem 0 0;
+                margin-top: 4rem;
+                box-shadow: 0 -4px 20px rgba(30, 41, 59, 0.12);
+              }
+
+              .footer-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 3rem;
+                max-width: 1200px;
+                margin: 0 auto;
+              }
+
+              .footer-col h4 {
+                color: #fbbf24;
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+                font-weight: 700;
+              }
+
+              .footer-col ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+              }
+
+              .footer-col ul li {
+                margin-bottom: 0.8rem;
+              }
+
+              .footer-col ul li a {
+                color: #e0e7ff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                font-size: 0.95rem;
+              }
+
+              .footer-col ul li a:hover {
+                color: #fbbf24;
+              }
+
+              .icons {
+                display: flex;
+                gap: 1.5rem;
+              }
+
+              .icons a {
+                color: #fff;
+                font-size: 1.5rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                background: rgba(251, 191, 36, 0.1);
+              }
+
+              .icons a:hover {
+                color: #fbbf24;
+                background: rgba(251, 191, 36, 0.2);
+                transform: scale(1.1);
+              }
+
+              .footer-copyright {
+                margin-top: 2rem;
+                color: #e0e7ff;
+                font-size: 0.95rem;
+                text-align: center;
+                width: 100%;
+                padding-top: 2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+              }
+
+              /* ===== RESPONSIVE ===== */
+              @media (max-width: 1024px) {
+                .hero {
+                  padding: 2rem;
+                  gap: 2rem;
+                }
+
+                section {
+                  padding: 2rem 1.5rem;
+                }
+              }
+
+              @media (max-width: 900px) {
+                .hero,
+                .about-content,
+                .services-grid,
+                .footer-row {
+                  flex-direction: column;
+                  gap: 2rem;
+                }
+
+                .hero img {
+                  max-width: 220px;
+                }
+
+                .gallery-grid {
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                }
+
+                h2 {
+                  font-size: 2rem;
+                }
+
+                .hero h1 {
+                  font-size: 2rem;
+                }
+              }
+
+              @media (max-width: 600px) {
+                header {
+                  padding: 1rem 0;
+                }
+
+                nav {
+                  gap: 1rem;
+                  font-size: 0.9rem;
+                }
+
+                .hero {
+                  padding: 1.5rem;
+                  margin: 1rem auto;
+                }
+
+                .hero h1 {
+                  font-size: 1.6rem;
+                }
+
+                section {
+                  padding: 1.5rem 1rem;
+                  margin: 2rem auto;
+                }
+
+                .gallery-grid {
+                  grid-template-columns: 1fr;
+                }
+
+                h2 {
+                  font-size: 1.8rem;
+                }
+              }
+            </style>
+          </head>
+
+          <body>
+            <!-- HEADER SECTION -->
+            <header>
+              <div class="container">
+                <nav class="nav-links">
+                  <a href="index.html">Home</a>
+                  <a href="#gallery">Gallery</a>
+                  <a href="#services">Services</a>
+                  <a href="#about">About</a>
+                  <a href="#contact">Contact</a>
+                </nav>
+              </div>
+            </header>
+
+            <!-- HERO SECTION -->
+            <section class="hero">
+              <div class="left">
+                <img
+                  src="IMG-20240618-WA0002.jpg"
+                  alt="Kimani Anthony - Professional Photographer"
+                />
+              </div>
+              <div class="right">
+                <h6>Professional Photographer</h6>
+                <h1>Kimani Anthony</h1>
+                <p>
+                  Capturing compelling moments that tell powerful stories.
+                  Specializing in portrait, event, and documentary photography
+                  with a passion for community impact and creative excellence.
+                </p>
+                <a href="#contact" class="btn">Book a Session</a>
+              </div>
+            </section>
+
+            <!-- GALLERY SECTION -->
+            <section id="gallery">
+              <div class="container">
+                <h2>Gallery</h2>
+                <div class="gallery-intro">
+                  <p>
+                    A curated collection of my best work showcasing diverse
+                    photography styles and meaningful moments captured across
+                    various projects.
+                  </p>
+                </div>
+                <div class="gallery-grid">
+                  <!-- Gallery Item 1 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/IMG_0409.jpg"
+                      alt="Mentoring children at charity event"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Mentoring Session - Inspiring the next generation at
+                          Amazing Wonders Rescue Center
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gallery Item 2 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/IMG_1209.jpg"
+                      alt="Graduation celebration"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Academic Success - Celebrating graduation at Kiriri
+                          Women's University
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gallery Item 3 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/IMG_0601.jpg"
+                      alt="Charity event partnership"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Community Impact - Spread A Smile charity event
+                          collaboration
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gallery Item 4 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/IMG_0453.jpg"
+                      alt="Joyful smile portrait"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Portrait - Capturing pure joy and authentic happiness
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gallery Item 5 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/Photo_1722882871098.jpg"
+                      alt="Mentorship moment"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Mentorship - Empowering young minds through guidance
+                          and encouragement
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gallery Item 6 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/IMG_0656.jpg"
+                      alt="Reflection and growth"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Self-Reflection - Celebrating achievements and
+                          learning opportunities
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gallery Item 7 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/IMG-20241003-WA0005.jpg"
+                      alt="Train artistic shot"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Adventure - Journey and movement captured in artistic
+                          detail
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gallery Item 8 -->
+                  <div class="gallery-item">
+                    <img
+                      src="photos/IMG_0617.jpg"
+                      alt="Community togetherness"
+                    />
+                    <div class="gallery-overlay">
+                      <div class="gallery-text">
+                        <p>
+                          Community Spirit - Finding joy in service and
+                          togetherness
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- SERVICES SECTION -->
+            <section id="services">
+              <div class="container">
+                <h2>Photography Services</h2>
+                <div class="services-grid">
+                  <div class="service-card">
+                    <h3>Portrait Photography</h3>
+                    <p>
+                      Professional headshots, personal portraits, and family
+                      sessions that capture your authentic self with
+                      studio-quality lighting and composition.
+                    </p>
+                  </div>
+
+                  <div class="service-card">
+                    <h3>Event Photography</h3>
+                    <p>
+                      Full coverage of weddings, graduations, corporate events,
+                      and celebrations. Capturing candid moments and key
+                      highlights throughout your special day.
+                    </p>
+                  </div>
+
+                  <div class="service-card">
+                    <h3>Documentary Photography</h3>
+                    <p>
+                      Storytelling through images. Perfect for community
+                      projects, social impact initiatives, and meaningful
+                      moments that need authentic documentation.
+                    </p>
+                  </div>
+
+                  <div class="service-card">
+                    <h3>Creative Sessions</h3>
+                    <p>
+                      Artistic and conceptual photography projects including
+                      fashion, product, and themed shoots. Let's bring your
+                      creative vision to life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ABOUT SECTION -->
+            <section id="about">
+              <div class="container">
+                <h2>About My Photography</h2>
+                <div class="about-content">
+                  <img src="IMG-20240618-WA0002.jpg" alt="Kimani Anthony" />
+                  <div class="text">
+                    <h3>Passionate Visual Storyteller</h3>
+                    <p>
+                      I believe every moment has a story to tell. Through my
+                      lens, I capture authentic emotions, genuine connections,
+                      and the beauty in everyday life. My photography is driven
+                      by a mission to preserve memories that matter and inspire
+                      positive change.
+                    </p>
+
+                    <h3>Specializations</h3>
+                    <p>
+                      My expertise spans portrait, event, documentary, and
+                      creative photography. Each project is approached with
+                      careful attention to lighting, composition, and
+                      narrative—ensuring your story is told beautifully and
+                      authentically.
+                    </p>
+
+                    <h3>Community Focused</h3>
+                    <p>
+                      Beyond commercial work, I'm passionate about using
+                      photography for social impact. I regularly contribute to
+                      charitable projects and mentorship initiatives, believing
+                      that visual storytelling can inspire and empower
+                      communities.
+                    </p>
+
+                    <h3>My Process</h3>
+                    <p>
+                      I work closely with clients to understand their vision,
+                      then execute with precision and creativity. Pre-shoot
+                      consultations, professional editing, and timely delivery
+                      are at the core of my service.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact">
+              <div class="container">
+                <h2>Book Your Session</h2>
+                <p>
+                  Ready to capture your story? Get in touch to discuss your
+                  photography needs and create something beautiful together.
+                </p>
+                <form action="https://formspree.io/f/xdkeledv" method="POST">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Photography Service Interest"
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Tell me about your photography needs..."
+                    required
+                  ></textarea>
+                  <button type="submit">Send Inquiry</button>
+                </form>
+              </div>
+            </section>
+
+            <!-- FOOTER SECTION -->
+             <!-- FOOTER -->
+            <footer class="footer">
+              <div class="footer-row">
+                <div class="footer-col">
+                  <h4>Navigation</h4>
+                  <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                  </ul>
+                </div>
+
+                <div class="footer-col">
+                  <h4>Connect</h4>
+                  <div class="icons">
+                    <a
+                      href="https://web.facebook.com/anthonio.xitony"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Facebook"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                      href="https://x.com/KymCreates7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="X"
+                    >
+                      <i class="fab fa-x-twitter"></i>
+                    </a>
+
+                    <a
+                      href="https://www.linkedin.com/in/anthony-kimani-7983a1286"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="LinkedIn"
+                    >
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a
+                      href="https://github.com/K1man13"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="GitHub"
+                    >
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+
+                  <div class="footer-copyright">
+                    <p>&copy; 2026 Kimani Anthony. All Rights Reserved.</p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+
+
+            <script>
+              // Smooth scrolling for navigation links
+              document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                  e.preventDefault();
+                  const target = document.querySelector(
+                    this.getAttribute("href")
+                  );
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                  }
+                });
+              });
+            </script>
+          </body>
+        </html>
