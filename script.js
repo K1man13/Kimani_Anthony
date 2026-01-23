@@ -71,6 +71,8 @@ function loadPage(page) {
 }
 
 // Floating Particles Background
-particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('Particles.js loaded');
-});
+if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+    particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('Particles.js loaded');
+    });
+}

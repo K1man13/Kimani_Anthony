@@ -18,6 +18,54 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+/* Container utility class */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Utility classes for responsive design */
+.w-full {
+  width: 100%;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Responsive utilities */
+@media (min-width: 768px) {
+  .md\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+  
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+  
+  .md\:max-w-md {
+    max-width: 28rem;
+  }
+}
+
 .dark-mode {
   background-color: #121212;
   color: white;
@@ -52,7 +100,7 @@ body {
 /* Header */
 /* Sticky Header */
 .sticky-header {
-  position: scrola;
+  position: relative;
   top: 0;
   z-index: 1000;
   background-color: var(--bgDark);
@@ -565,9 +613,12 @@ form button:hover {
 
 /* Footer Section */
 .footer {
-  background: var(--bgDark);
-  padding: 20px 0;
+  background: linear-gradient(90deg, #1e293b 0%, #6366f1 100%);
   color: #fff;
+  padding: 2rem 0;
+  border-radius: 1rem 1rem 0 0;
+  margin-top: 3rem;
+  box-shadow: 0 -2px 12px rgba(30, 41, 59, 0.09);
 }
 
 .footer .footer-row {
@@ -610,16 +661,39 @@ form button:hover {
 .footer-col .icons {
   display: flex;
   margin-top: 30px;
-  gap: 30px;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-col .icons a {
-  color: #afb6c7;
-  transition: color 0.3s;
+  color: #fff;
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-col .icons a:hover {
   color: #fff;
+  background: var(--primary);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(29, 221, 189, 0.4);
+  border-color: var(--primary);
+}
+
+.footer-col .icons a:active {
+  transform: translateY(-1px) scale(1.05);
 }
 
 /* Responsive Styles */
@@ -631,6 +705,13 @@ form button:hover {
 
   .footer-col .icons {
     margin-top: 20px;
+    gap: 12px;
+  }
+
+  .footer-col .icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
   
   .hero {
